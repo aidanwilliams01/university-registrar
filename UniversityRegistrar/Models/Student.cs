@@ -1,6 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Data.Common;
+
 namespace Registrar.Models
 {
   public class Student

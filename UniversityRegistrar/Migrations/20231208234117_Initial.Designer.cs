@@ -11,7 +11,7 @@ using Registrar.Models;
 namespace UniversityRegistrar.Migrations
 {
     [DbContext(typeof(UniversityRegistrarContext))]
-    [Migration("20231207234434_Initial")]
+    [Migration("20231208234117_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
