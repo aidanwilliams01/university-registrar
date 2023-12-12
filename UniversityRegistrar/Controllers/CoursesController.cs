@@ -30,6 +30,11 @@ namespace Registrar.Controllers
     [HttpPost]
     public ActionResult Create(Course course)
     {
+      if (!ModelState.IsValid)
+      {
+        // ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
+        return View(course);
+      }
       _db.Courses.Add(course);
       _db.SaveChanges();
       return RedirectToAction("Index");

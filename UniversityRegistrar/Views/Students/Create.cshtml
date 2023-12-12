@@ -10,12 +10,14 @@
 {
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
+  @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger", @style = "font-weight: 600;" })
   <br>
   @* @Html.LabelFor(model => model.Category)
   @Html.DropDownList("CategoryId")
   <br> *@
   @Html.LabelFor(model => model.EnrollmentDate)
   @Html.TextBoxFor(model => model.EnrollmentDate, new { type = "date" })
+  @Html.ValidationMessageFor(model => model.EnrollmentDate, "", new { @class = "text-danger", @style = "font-weight: 600;" })
   <br>
   @* @Html.LabelFor(model => model.StudentCompletion, "Student Completed?")
   @Html.CheckBoxFor(model => model.StudentCompletion)

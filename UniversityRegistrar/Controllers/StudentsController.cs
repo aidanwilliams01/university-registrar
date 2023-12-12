@@ -34,10 +34,11 @@ namespace Registrar.Controllers
     [HttpPost]
     public ActionResult Create(Student student)
     {
-      // if (student.CategoryId == 0)
-      // {
-      //   return RedirectToAction("Create");
-      // }
+      if (!ModelState.IsValid)
+      {
+        // ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
+        return View(student);
+      }
       _db.Students.Add(student);
       _db.SaveChanges();
       return RedirectToAction("Index");
