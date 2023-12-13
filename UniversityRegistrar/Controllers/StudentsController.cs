@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Registrar.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Registrar.Controllers
 {
@@ -19,15 +18,12 @@ namespace Registrar.Controllers
     public ActionResult Index()
     {
       List<Student> model = _db.Students
-                            // .OrderBy(student => student.DueDate)
-                            // .Include(student => student.Category)
                             .ToList();
       return View(model);
     }
 
     public ActionResult Create()
     {
-      // ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
       return View();
     }
 
@@ -36,7 +32,6 @@ namespace Registrar.Controllers
     {
       if (!ModelState.IsValid)
       {
-        // ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
         return View(student);
       }
       _db.Students.Add(student);
@@ -47,7 +42,6 @@ namespace Registrar.Controllers
     public ActionResult Details(int id)
     {
       Student thisStudent = _db.Students
-                          // .Include(student => student.Category)
                           .Include(student => student.JoinEntities)
                           .ThenInclude(join => join.Course)
                           .FirstOrDefault(student => student.StudentId == id);

@@ -22,11 +22,6 @@ else
     @foreach(StudentCourse join in Model.JoinEntities)
     {
       <li>@join.Student.Name</li>
-      @* @using (Html.BeginForm("DeleteJoin", "Items"))
-      {
-        @Html.Hidden("joinId", @join.ItemTagId)
-        <input type="submit" value="Delete"/>
-      } *@
     }
   </ul>
 }

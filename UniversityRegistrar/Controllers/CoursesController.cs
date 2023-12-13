@@ -32,7 +32,6 @@ namespace Registrar.Controllers
     {
       if (!ModelState.IsValid)
       {
-        // ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
         return View(course);
       }
       _db.Courses.Add(course);
@@ -43,7 +42,6 @@ namespace Registrar.Controllers
     public ActionResult Details(int id)
     {
       Course thisCourse = _db.Courses
-                                  // .Include(course => course.Courses)
                                   .Include(course => course.JoinEntities)
                                   .ThenInclude(join => join.Student)
                                   .FirstOrDefault(course => course.CourseId == id);

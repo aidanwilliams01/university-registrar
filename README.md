@@ -1,6 +1,4 @@
-# (Application Name)
-
-#### (Brief description of application)
+# University Registrar
 
 #### By Aidan Williams
 
@@ -10,6 +8,10 @@
 * _.NET_
 
 ## Description
+
+A web app for keeping track of courses and students at a university.
+
+## Setup Instructions
 
 1. Clone this repo.
 1. Open MYSQL Workbench and connect to your local server.

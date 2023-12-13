@@ -8,9 +8,7 @@
 <h2>Student Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
-@* <h3>@Html.DisplayNameFor(model => model.Category): @Html.DisplayFor(model => model.Category.Name)</h3> *@
 <h3>Enrollment Date: @Html.DisplayFor(model => model.EnrollmentDate)</h3>
-@* <h3>Student Completed?: @Html.DisplayFor(model => model.StudentCompletion)</h3> *@
 
 @if(@Model.JoinEntities.Count == 0)
 {
@@ -23,15 +21,7 @@ else
     @foreach(StudentCourse join in Model.JoinEntities)
     {
       <li>@join.Course.Name</li>
-      @* @using (Html.BeginForm("DeleteJoin", "Students"))
-      {
-        @Html.Hidden("joinId", @join.StudentTagId)
-        <input type="submit" value="Delete"/>
-      } *@
     }
   </ul>
 }
 <p>@Html.ActionLink("Back to list", "Index")</p>
-@* <p>@Html.ActionLink("Edit Student", "Edit", new { id = Model.StudentId })</p>
-<p>@Html.ActionLink("Delete Student", "Delete", new { id = Model.StudentId })</p>
-<p>@Html.ActionLink("Add a Tag", "AddTag", new { id = Model.StudentId })</p> *@
